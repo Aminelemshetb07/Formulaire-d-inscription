@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Formulaire d'inscription</title>
+</head>
+
+<body>
+
+    <!-- <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Formulaire</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+
+    <section class="container col-8 mt-5 mb-5">
+
+        <div  id="dangerError" class="alert alert-danger alert-dismissible fade show" role="alert">
+        </div>
+
+        <form id="myForm">
+
+            <div class="d-flex">
+                <div class="form-floating mb-3 col">
+                    <input type="text" class="form-control" id="nom" placeholder="" />
+                    <label for="floatingInput">Nom</label>
+                    <span id="error"></span>
+                </div>
+                <div class="form-floating col">
+                    <input type="text" class="form-control" id="prenom" placeholder="" />
+                    <label for="floatingInput">Prénom</label>
+                    <span id="error2"></span>
+                </div>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text"  class="form-control" id="email" placeholder="" />
+                <label for="floatingInput">Email address</label>
+                <span id="error3"></span>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="telephone" placeholder="Téléphone" />
+                <label for="floatingPassword">Téléphone</label>
+                <span id="error4"></span>
+            </div>
+
+            <div class="row mt-2">
+
+                <div class="col-md-6">
+                    <label for="exampleFormControlInput1" class="form-label is-invalid">Genre</label>
+                    <br />
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1" />
+                        <label class="form-check-label" for="inlineRadio1">Men</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" />
+                        <label class="form-check-label" for="inlineRadio2">Female</label>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="exampleFormControlInput1" class="form-label">Groupe</label>
+                    <select class="form-select"  aria-label="Default select example" id="options">
+                        <option selected disabled >Chose your Groupe</option>
+                        <option value="3">DW101</option>
+                        <option value="1">DW102</option>
+                        <option value="2">DW103</option>
+                        <option value="3">DW104</option>
+                        <option value="3">DW105</option>
+                        <option value="3">DW106</option>
+                    </select>
+                </div>
+                <span id="errorChekbox"></span>
+            </div>
+
+            <div class="mt-2">
+                <label for="">Club</label>
+                <select id="clubSelect" class="form-select mt-3" aria-label="Default select example" name="" multiple>
+                    <option selected>Informatique</option>
+                    <option value="1">Robotique</option>
+                    <option value="2">Jeu d'échecs</option>
+                    <option value="3">Musique</option>
+                    <option value="3">Foot</option>
+                    <option value="3">Théatre</option>
+                </select>
+            </div>
+
+
+            <button type="submit" class="btn btn-outline-success mt-3">validé</button>
+
+
+        </form>
+
+    </section>
+
+
+
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
