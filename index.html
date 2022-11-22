@@ -14,36 +14,13 @@
   </head>
 
   <body>
-    <!-- <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Formulaire</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
+
 
     <section class="container col-8 mt-5 mb-5">
-      <div
-        id="dangerError"
-        class="alert alert-danger alert-dismissible fade show"
-        role="alert"
-      ></div>
 
-      <form id="myForm" action="lol.html">
-        <div class="d-flex">
-          <div class="form-floating mb-3 col">
+      <form id="myForm" action="inscri.html">
+        <div class="d-md-flex d-block mb-2">
+          <div class="form-floating mb-2 col">
             <input type="text" class="form-control" id="nom" placeholder="" />
             <label for="floatingInput">Nom</label>
             <span id="error"></span>
@@ -93,7 +70,6 @@
               />
               <label class="form-check-label" for="inlineRadio1">Men</label>
             </div>
-
             <div class="form-check form-check-inline">
               <input
                 class="form-check-input"
@@ -103,8 +79,8 @@
               />
               <label class="form-check-label" for="inlineRadio2">Female</label>
             </div>
+            <p id="errorChekbox"></p>
           </div>
-
           <div class="col-md-6">
             <label for="exampleFormControlInput1" class="form-label"
               >Groupe</label
@@ -114,7 +90,7 @@
               aria-label="Default select example"
               id="options"
             >
-              <option selected disabled>Chose your Groupe</option>
+              <option selected value="">Chose your Groupe</option>
               <option value="3">DW101</option>
               <option value="1">DW102</option>
               <option value="2">DW103</option>
@@ -122,10 +98,9 @@
               <option value="3">DW105</option>
               <option value="3">DW106</option>
             </select>
+            <span id="errorGroup"></span>
           </div>
-          <span id="errorChekbox"></span>
         </div>
-
         <div class="mt-2">
           <label for="">Club</label>
           <select
@@ -135,7 +110,7 @@
             name=""
             multiple
           >
-            <option selected>Informatique</option>
+            <option value="0">Informatique</option>
             <option value="1">Robotique</option>
             <option value="2">Jeu d'échecs</option>
             <option value="3">Musique</option>
