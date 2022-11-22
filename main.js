@@ -4,11 +4,9 @@ document.getElementById('nom').onblur = function(){
 
     let myInput = document.getElementById('nom');
     let myRegex = /^[a-zA-Z]{3,15}$/;
+    let myError = document.getElementById('error');
 
     if(myInput.value.trim() == ""){
-
-        let myError = document.getElementById('error');
-
         nom.setAttribute("class" , "is-invalid form-control "); 
         myError.innerHTML = "Entre votre Nom!.";
         myError.style.color = 'red';
@@ -24,7 +22,9 @@ document.getElementById('nom').onblur = function(){
 
 
     }else {
-        nom.setAttribute("class" , "is-valid form-control ");     
+        nom.setAttribute("class" , "is-valid form-control ");   
+        myError.innerHTML = "";
+
     }
 
 
@@ -36,10 +36,10 @@ document.getElementById('prenom').onblur = function(){
 
     let myInput = document.getElementById('prenom');
     let myRegex = /^[a-zA-Z]{3,15}$/;
+    let myError = document.getElementById('error');
 
     if(myInput.value.trim() == ""){
 
-        let myError = document.getElementById('error');
 
         prenom.setAttribute("class" , "is-invalid form-control "); 
         myError.innerHTML = "Entre votre Nom!.";
@@ -56,7 +56,9 @@ document.getElementById('prenom').onblur = function(){
 
 
     }else {
-        prenom.setAttribute("class" , "is-valid form-control ");     
+        prenom.setAttribute("class" , "is-valid form-control ");  
+        myError.innerHTML = "";
+
     }
 
 
@@ -69,10 +71,10 @@ document.getElementById('email').onblur = function(){
 
     let myInput = document.getElementById('email');
     let myRegex = /^((\w+)?.(\w+)?@(gmail|hotmail|yahoo|ofppt).(com|org|net|ma))$/;
+    let myError = document.getElementById('error3');
 
     if(myInput.value.trim() == ""){
 
-        let myError = document.getElementById('error3');
 
         email.setAttribute("class" , "is-invalid form-control "); 
         myError.innerHTML = "Entre votre Nom!.";
@@ -90,7 +92,9 @@ document.getElementById('email').onblur = function(){
     
 
     }else {
-        email.setAttribute("class" , "is-valid form-control ");     
+        email.setAttribute("class" , "is-valid form-control ");    
+        myError.innerHTML = "";
+
     }
 
 
@@ -105,10 +109,10 @@ document.getElementById('telephone').onblur = function(){
 
     let myInput = document.getElementById('telephone');
     let myRegex = /^((05)|(06)|(07))[0-9]{8}$/;
+    let myError = document.getElementById('error4');
 
     if(myInput.value.trim() == ""){
 
-        let myError = document.getElementById('error4');
 
         telephone.setAttribute("class" , "is-invalid form-control "); 
 
@@ -126,7 +130,9 @@ document.getElementById('telephone').onblur = function(){
 
 
     }else {
-        telephone.setAttribute("class" , "is-valid form-control ");     
+        telephone.setAttribute("class" , "is-valid form-control "); 
+        myError.innerHTML = "";
+
     }
 
 
@@ -150,12 +156,15 @@ document.getElementById('telephone').onblur = function(){
 
 
 
+const arr = [];
 
 
 
 let myForm = document.getElementById('myForm');
+arr.length = 0;
 
         myForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             let myInput = document.getElementById('nom');
             let myInput2 = document.getElementById('prenom');
             let email = document.getElementById('email');
@@ -167,16 +176,17 @@ let myForm = document.getElementById('myForm');
 
 
 //<=============== if for Nom =============>
+let myError = document.getElementById('error');
 
             if(myInput.value.trim() == ""){
 
-                let myError = document.getElementById('error');
 
                 nom.setAttribute("class" , "is-invalid form-control "); 
                 myError.innerHTML = "Entre votre Nom!.";
                 myError.style.color = 'red';
+                arr.push(false);
 
-                e.preventDefault();
+                ;
                 
             } else if(myRegex.test(myInput.value) == false){
                 let myError = document.getElementById('error');
@@ -185,66 +195,74 @@ let myForm = document.getElementById('myForm');
 
                 myError.innerHTML = "please entrer your name correct!";
                 myError.style.color = 'red';
+                arr.push(false);
 
-                e.preventDefault()
+
+                
             
             }else {
                 nom.setAttribute("class" , "is-valid form-control "); 
+                myError.innerHTML = "";
+
             }
 
 //<=============== if for Prénom =============>
 
 
+            let myError2 = document.getElementById('error2');
             if(myInput2.value.trim() == ""){
 
-                let myError2 = document.getElementById('error2');
 
                 prenom.setAttribute("class" , "is-invalid form-control "); 
                 myError2.innerHTML = "Entre votre Prénom!.";
                 myError2.style.color = 'red';
+                arr.push(false);
 
-                e.preventDefault();
+                ;
                 
             } else if(myRegex.test(myInput2.value) == false){
-                let myError2 = document.getElementById('error2');
-
                 prenom.setAttribute("class" , "is-invalid form-control "); 
 
                 myError2.innerHTML = "please entrer your name correct!";
                 myError2.style.color = 'red';
+                arr.push(false);
                 
-                e.preventDefault()
+                
             
             }else {
-                floatingInput2.setAttribute("class" , "is-valid form-control "); 
+                prenom.setAttribute("class" , "is-valid form-control "); 
+                myError2.innerHTML = "";
+
             }
 
             
 //<=============== if for Email =============>
 
 
+            let myError3 = document.getElementById('error3');
             if(email.value.trim() == ""){
 
-                let myError = document.getElementById('error3');
 
                 email.setAttribute("class" , "is-invalid form-control "); 
 
-                myError.innerHTML = "Entre votre Email!.";
-                myError.style.color = 'red';
+                myError3.innerHTML = "Entre votre Email!.";
+                myError3.style.color = 'red';
+                arr.push(false);
 
-                e.preventDefault();
+                ;
                 
             } else if(myRegexEmail.test(myInput3.value) == false){
-                let myError3 = document.getElementById('error3');
-
                 email.setAttribute("class" , "is-invalid form-control "); 
 
                 myError3.innerHTML = "please entrer your email correct!";
                 myError3.style.color = 'red';
+                arr.push(false);
 
-                e.preventDefault()
+                
             }else {
-                floatingInput3.setAttribute("class" , "is-valid form-control "); 
+                email.setAttribute("class" , "is-valid form-control "); 
+                myError3.innerHTML = "";
+
             }
 
 
@@ -252,27 +270,30 @@ let myForm = document.getElementById('myForm');
 //<=============== if for telephone =============>
 
 
+            let myError4 = document.getElementById('error4');
             if(telephone.value.trim() == ""){
 
-                let myError = document.getElementById('error4');
 
                 telephone.setAttribute("class" , "is-invalid form-control "); 
-                myError.innerHTML = "Entre votre Number!.";
-                myError.style.color = 'red';
+                myError4.innerHTML = "Entre votre Number!.";
+                myError4.style.color = 'red';
+                arr.push(false);
 
-                e.preventDefault();
+                ;
                 
             } else if(myRegexTele.test(myInput4.value) == false){
-                let myError4 = document.getElementById('error4');
 
                 telephone.setAttribute("class" , "is-invalid form-control "); 
 
                 myError4.innerHTML = "please entrer you Number!";
                 myError4.style.color = 'red';
+                arr.push(false);
 
-                e.preventDefault()
+                
             }else {
                 floatingInput4.setAttribute("class" , "is-valid form-control "); 
+                myError4.innerHTML = "";
+
                 
             }
 
@@ -289,6 +310,23 @@ let myForm = document.getElementById('myForm');
             }  else {
                 errorCkebox.innerHTML = ""
             }
+
+
+            // let club = document.getElementById('clubSelect');
+            // let errorClub = document.getElementById('errorClub')
+            // if(club.length === 0){
+            //     errorClub.innerHTML = "please select max 3"
+                
+
+            // }else(club.length >= 3){
+
+            // }
+
+
+
+
+
+
 
 //<=============== if for Chek-box =============>
 
@@ -314,7 +352,9 @@ let myForm = document.getElementById('myForm');
 
 
 
-
+        if( arr.length === 0){
+            myForm.submit()
+        }
 
 
 
@@ -330,9 +370,7 @@ let myForm = document.getElementById('myForm');
 
 
 
-//<=============== code email and telephone =============>
-        // [a-z0-9](.?[a-z0-9])@g(oogle)?mail.com$
-        // ^((05)|(06)|(07))[0-9]{8}$
+
 
 
 
@@ -390,7 +428,7 @@ let myForm = document.getElementById('myForm');
 
 //     if(userValid === false || ageValid === false){
 
-//         e.preventDefault();
+//         ;
     
 //     }
 // }
