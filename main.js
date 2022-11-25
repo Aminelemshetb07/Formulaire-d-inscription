@@ -22,7 +22,7 @@ document.getElementById('prenom').onblur = function(){
     let myError = document.getElementById('error2');
     if(myInput.value.trim() == ""){
         prenom.setAttribute("class" , "is-invalid form-control "); 
-        myError.innerHTML = "Entre votre Nom!.";
+        myError.innerHTML = "Entre votre prenom!.";
         myError.style.color = 'red';
     } else if(myRegex.test(myInput.value) == false){
         let myError = document.getElementById('error2');
